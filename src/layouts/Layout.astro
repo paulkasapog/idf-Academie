@@ -1,0 +1,92 @@
+---
+// active Tailwind 
+import '../styles/global.css';
+const { title = "IDF Académie", description = "Club & Académie – Le Blanc‑Mesnil" } = Astro.props;
+---
+<html lang="fr" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <link rel="icon" href="/favicon.ico" />
+  </head>
+
+  <body class="bg-neutral-950 text-white antialiased">
+    <!-- Header / Nav -->
+    <header class="sticky top-0 z-50 bg-neutral-950/80 backdrop-blur border-b border-neutral-800">
+      <div class="mx-auto max-w-6xl px-4 h-16 flex items-center justify-between">
+        <a href="/" class="flex items-center gap-3">
+          <img src="/logoAsso.jpg" alt="IDF Académie" class="h-10 w-10 object-contain" />
+          <span class="font-semibold tracking-wide">IDF Académie</span>
+        </a>
+
+        <!-- Desktop nav -->
+        <nav class="hidden md:flex items-center gap-6 text-sm">
+          <a class="nav" href="/">Accueil</a>
+          <a class="nav" href="/a-propos">À propos</a>
+          <a class="nav" href="/planning">Planning</a>
+          <a class="nav" href="/galerie">Galerie</a>
+          <a class="btn" href="/contact">Contact</a>
+        </nav>
+
+        <!-- Mobile burger -->
+        <button id="menuBtn" class="md:hidden inline-flex items-center justify-center rounded-xl h-10 w-10 border border-neutral-800">
+          <span class="sr-only">Ouvrir le menu</span>
+          ☰
+        </button>
+      </div>
+
+      <!-- Mobile menu -->
+      <div id="mobileMenu" class="md:hidden hidden border-t border-neutral-800">
+        <nav class="px-4 py-3 flex flex-col gap-2">
+          <a class="nav px-1 py-2" href="/">Accueil</a>
+          <a class="nav px-1 py-2" href="/a-propos">À propos</a>
+          <a class="nav px-1 py-2" href="/planning">Planning</a>
+          <a class="nav px-1 py-2" href="/galerie">Galerie</a>
+          <a class="btn w-full text-center" href="/contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="mx-auto max-w-6xl px-4 py-10">
+      <slot />
+    </main>
+
+    <footer class="mt-10 border-t border-neutral-800">
+      <div class="mx-auto max-w-6xl px-4 py-8 grid gap-6 md:grid-cols-3">
+        <div>
+          <div class="flex items-center gap-3">
+            <img src="/logoAsso.jpg" alt="" class="h-10 w-10" />
+            <p class="font-semibold">IDF Académie – Football Club</p>
+          </div>
+          <p class="mt-2 text-sm text-neutral-300">
+            Le Blanc‑Mesnil • Maison des arts martiaux
+          </p>
+        </div>
+        <div>
+          <p class="font-medium mb-2">Contacts</p>
+          <p class="text-sm text-neutral-300">Email : contact@idfacademie.fr</p>
+          <p class="text-sm text-neutral-300">Téléphone : 06 00 00 00 00</p>
+        </div>
+        <div>
+          <p class="font-medium mb-2">Réseaux</p>
+          <div class="flex gap-3">
+            <a class="chip" href="#" target="_blank" rel="noopener">Instagram</a>
+            <a class="chip" href="#" target="_blank" rel="noopener">YouTube</a>
+            <a class="chip" href="#" target="_blank" rel="noopener">TikTok</a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-neutral-800 text-center text-xs text-neutral-400 py-4">
+        © {new Date().getFullYear()} IDF Académie. Tous droits réservés.
+      </div>
+    </footer>
+
+    <script>
+      const btn = document.getElementById('menuBtn');
+      const menu = document.getElementById('mobileMenu');
+      btn?.addEventListener('click', () => menu?.classList.toggle('hidden'));
+    </script>
+  </body>
+</html>

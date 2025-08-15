@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+/* Palette & thèmes Tailwind v4 via @theme  */
+@theme {
+  --color-gold: #FFD700;
+  --color-ink: #000000;
+  --color-bg: #0b0b0b;     /* gris très foncé pour fonds */
+  --color-muted: #1c1c1c;
+}
+
+/* Raccourcis de styles réutilisables */
+.nav {
+  @apply text-neutral-300 hover:text-white transition;
+}
+.btn {
+  @apply px-4 py-2 rounded-xl border border-gold/40 text-white hover:bg-gold hover:text-black transition;
+}
+.chip {
+  @apply px-3 py-1 rounded-xl border border-neutral-700 text-neutral-200 hover:border-gold hover:text-white transition;
+}
+
+/* Utilitaires */
+body { background: var(--color-bg); }
+.border-gold { border-color: var(--color-gold); }
+.text-gold { color: var(--color-gold); }
+.bg-gold { background-color: var(--color-gold); }
