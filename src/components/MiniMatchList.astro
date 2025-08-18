@@ -1,0 +1,44 @@
+---
+import { coerce } from "astro:schema";
+import rawMatches from "../data/matches.json";
+
+type Match = {
+  date: string;       // "YYYY-MM-DD"
+  adversaire: string;
+  categorie: string;
+  lieu: string;
+  heure: string;      // "HH:MM"
+};
+
+
+
+
+const matches = rawMatches as Match[] // les donnée JSON typer
+const today = new Date().toISOString().slice(0, 10); //Date d'aujourd'hui
+
+
+
+//Garder seulement les dates superieur a celle d'aujourd'hui
+function filter(match:Match){
+  return match.date>today;
+
+}
+const trieJson= matches.filter(filter).sort((a, b) => a.date.localeCompare(b.date)); //Trie les match par ordre croissant dans les donnée de Json
+const troisPremierMatch = trieJson.slice(0,3); //Trier pour garder seulement les 3 prochains matches
+
+
+---
+{troisPremierMatch.map((m) => (
+  <div class="mb-4 p-4 rounded-xl border border-neutral-800 bg-neutral-900 flex items-center justify-between">
+    <div>
+      <p class="text-lg font-semibold text-gold">{m.adversaire}</p>
+      <p class="text-sm text-neutral-400">{m.lieu}</p>
+    </div>
+    <div class="text-right">
+      <p class="text-sm text-neutral-300">{m.date} • {m.heure}</p>
+      <p class="text-sm font-medium">{m.categorie}</p>
+    </div>
+  </div>
+))}
+
+
