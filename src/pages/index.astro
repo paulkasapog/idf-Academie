@@ -18,9 +18,9 @@ import MiniMatchList from "../components/MiniMatchList.astro";
   <section class="mt-12">
     <div class="flex items-center justify-between mb-4">
       <h2 class="text-2xl font-bold">À venir</h2>
-      <a class="nav underline hover:no-underline" href="../pages/planning.astro">Tout le planning →</a>
+      <a class="nav underline hover:no-underline" href="planning">Planning des prochains matchs</a>
     </div>
-    <MiniMatchList />
+    <MiniMatchList limit={3}/>
   </section>
 
 </Layout>

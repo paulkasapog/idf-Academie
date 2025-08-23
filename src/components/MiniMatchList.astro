@@ -19,17 +19,28 @@ const today = new Date().toISOString().slice(0, 10); //Date d'aujourd'hui
 
 
 //Garder seulement les dates superieur a celle d'aujourd'hui
-function filter(match:Match){
+function filtrer(match:Match){
   return match.date>today;
 
 }
-const trieJson= matches.filter(filter).sort((a, b) => a.date.localeCompare(b.date)); //Trie les match par ordre croissant dans les donnée de Json
-const troisPremierMatch = trieJson.slice(0,3); //Trier pour garder seulement les 3 prochains matches
+const trieJson = matches  //Trie les match par ordre croissant dans les donnée de Json
+  .filter(filtrer)
+  .sort((a, b) => {
+    // 1. Comparer les dates
+    const dateCompare = a.date.localeCompare(b.date);
+    if (dateCompare !== 0) return dateCompare;
+
+    // 2. Si même date → comparer les heures
+    return a.heure.localeCompare(b.heure);
+  });
+// const troisPremierMatch = trieJson.slice(0,3); //Trier pour garder seulement les 3 prochains matches
+const {limit}=Astro.props
+const match = limit ? trieJson.slice(0,limit) : trieJson
 
 
 ---
-{troisPremierMatch.map((m) => (
-  <div class="mb-4 p-4 rounded-xl border border-neutral-800 bg-neutral-900 flex items-center justify-between">
+{match.map((m) => (
+  <div class="mb-4 p-4 rounded-xl border-2 border-yellow-500 bg-neutral-900 flex items-center justify-between">
     <div>
       <p class="text-lg font-semibold text-gold">{m.adversaire}</p>
       <p class="text-sm text-neutral-400">{m.lieu}</p>
