@@ -13,7 +13,11 @@ import MiniMatchList from "../components/MiniMatchList.astro";
     De l’effort naît l’excellence. <br>
     Gagner, c’est se dépasser soi-même et transformer les rêves en réalité.
   </p>
-
+<div class="mt-6 flex gap-3">
+  <a href="/contact" class="btn">Contactez-nous</a>
+  <a href="/a-propos" class="chip">En savoir plus</a>
+</div>
+ 
   <!-- Section "À venir" -->
   <section class="mt-12">
     <div class="flex items-center justify-between mb-4">
@@ -22,5 +26,105 @@ import MiniMatchList from "../components/MiniMatchList.astro";
     </div>
     <MiniMatchList limit={3}/>
   </section>
+
+  <!-- Section Qui somme nous -->
+
+<section class="mt-12">
+  <h2 class="text-2xl font-bold mb-3">Qui sommes-nous ?</h2>
+  <p class="text-neutral-300">
+    IDF Académie est une association sportive en Île-de-France, spécialisée dans la formation
+    des jeunes footballeurs 6–12 ans. Nous proposons un projet éducatif et sportif structuré,
+    fondé sur des valeurs fortes.
+  </p>
+  <div class="mt-4 flex flex-wrap gap-2">
+    <span class="chip">Respect</span>
+    <span class="chip">Travail</span>
+    <span class="chip">Dépassement</span>
+    <span class="chip">Solidarité</span>
+  </div>
+</section>
+
+<!-- Notre mission -->
+<section class="mt-12">
+  <h2 class="text-2xl font-bold mb-4">Notre <span class="text-gold">mission</span></h2>
+  <div class="grid md:grid-cols-3 gap-4">
+    <article class="rounded-2xl border border-neutral-800 p-5">
+      <h3 class="font-semibold mb-2">Former des joueurs complets</h3>
+      <p class="text-neutral-300 text-sm">
+        Technique, tactique et intelligence de jeu au service du collectif.
+      </p>
+    </article>
+    <article class="rounded-2xl border border-neutral-800 p-5">
+      <h3 class="font-semibold mb-2">Transmettre les bonnes attitudes</h3>
+      <p class="text-neutral-300 text-sm">
+        Respect, discipline, fair-play et plaisir d’apprendre.
+      </p>
+    </article>
+    <article class="rounded-2xl border border-neutral-800 p-5">
+      <h3 class="font-semibold mb-2">Accompagner chaque enfant</h3>
+      <p class="text-neutral-300 text-sm">
+        Suivi personnalisé, objectifs clairs, progression régulière.
+      </p>
+    </article>
+  </div>
+</section>
+
+<!-- Nos activités -->
+<section class="mt-12">
+  <h2 class="text-2xl font-bold mb-4">Nos <span class="text-gold">activités</span></h2>
+  <div class="grid md:grid-cols-4 gap-4">
+    <article class="rounded-2xl border border-neutral-800 p-5">
+      <h3 class="font-semibold">Entraînements par âge</h3>
+      <p class="text-neutral-300 text-sm mt-1">Séances adaptées U6 à U12.</p>
+    </article>
+    <article class="rounded-2xl border border-neutral-800 p-5">
+      <h3 class="font-semibold">Stages vacances</h3>
+      <p class="text-neutral-300 text-sm mt-1">Perfectionnement encadré pendant les congés scolaires.</p>
+    </article>
+    <article class="rounded-2xl border border-neutral-800 p-5">
+      <h3 class="font-semibold">Matchs & compétitions</h3>
+      <p class="text-neutral-300 text-sm mt-1">Amicaux et officiels, selon les catégories.</p>
+    </article>
+    <article class="rounded-2xl border border-neutral-800 p-5">
+      <h3 class="font-semibold">Suivi individuel</h3>
+      <p class="text-neutral-300 text-sm mt-1">Bilan régulier et axes de progression personnels.</p>
+    </article>
+  </div>
+</section>
+
+<!-- Pourquoi choisir -->
+<section class="mt-12">
+  <h2 class="text-2xl font-bold mb-4">
+    Pourquoi <span class="text-gold">choisir</span> IDF Académie ?
+  </h2>
+  <ul class="space-y-2 text-neutral-300">
+    <li>✔️ Encadrement <span class="text-white font-semibold">professionnel et passionné</span></li>
+    <li>✔️ <span class="text-white font-semibold">Projet pédagogique clair</span>, adapté à tous les niveaux</li>
+    <li>✔️ <span class="text-white font-semibold">Ambiance familiale</span> et dynamique</li>
+    <li>✔️ <span class="text-white font-semibold">Engagement à long terme</span> pour le développement global du joueur</li>
+  </ul>
+</section>
+
+<!-- Où nous trouver -->
+<section class="mt-12">
+  <h2 class="text-2xl font-bold mb-4">
+    Où <span class="text-gold">nous trouver</span>
+  </h2>
+  <div class="rounded-2xl border border-neutral-800 p-6 bg-neutral-900/30">
+    <p class="text-neutral-300 mb-2">
+      📍 <span class="font-semibold">Maison des Arts Martiaux – Le Blanc-Mesnil</span>
+    </p>
+    <p class="text-neutral-400 text-sm">
+      D’autres sites partenaires selon les événements.
+    </p>
+    <!-- Placeholder carte -->
+    <div class="mt-4 h-48 bg-neutral-800 rounded-xl flex items-center justify-center text-neutral-500">
+      Carte Google Maps à intégrer ici
+    </div>
+  </div>
+</section>
+
+
+
 
 </Layout>
