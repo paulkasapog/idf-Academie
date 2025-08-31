@@ -1,16 +1,83 @@
 ---
-// active Tailwind 
 import '../styles/global.css';
-const { title = "IDF Académie", description = "Club & Académie – Le Blanc‑Mesnil" } = Astro.props;
+import { SITE, CONTACT, LOCATION, ROUTES , SOCIAL, ASSETS } from "../config";
+
+// Props venant de la page
+const {
+  title = SITE.name,
+  description = SITE.description,
+  url = "/", // chemin relatif par défaut
+  image = ASSETS.logo.src, // URL de l'image, pas l'objet complet
+  robots = "index,follow",
+} = Astro.props;
+
+// Fonction pour rendre une URL absolue
+const toAbs = (path: string) =>
+  path.startsWith("http") ? path : new URL(path, SITE.url).href;
+
+const pageUrl  = toAbs(url);
+const imageUrl = toAbs(image);
+const logoUrl  = toAbs(ASSETS.logo.src);
 ---
 <html lang="fr" class="scroll-smooth">
   <head>
+    <!-- Base -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content={description} />
     <title>{title}</title>
-    <link rel="icon" href="/favicon.ico" />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={pageUrl} />
+    <meta name="robots" content={robots} />
+    
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:image" content={imageUrl} />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content={SITE.name} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageUrl} />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+    <!-- JSON-LD -->
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "SportsOrganization",
+        name: SITE.name,
+        url: SITE.url,
+        slogan: SITE.tagline,
+        foundingDate: `${SITE.foundingYear}-01-01`,
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: LOCATION.city,
+          addressCountry: "FR",
+        },
+        email: CONTACT.email,
+        telephone: CONTACT.phone,
+        areaServed: "Île-de-France",
+        description: SITE.description,
+        logo: logoUrl,   
+        image: imageUrl, 
+      })}
+    ></script>
   </head>
+
+
 
   <body class="bg-neutral-950 text-white antialiased">
     <!-- Header / Nav -->
@@ -18,7 +85,7 @@ const { title = "IDF Académie", description = "Club & Académie – Le Blanc‑
       <div class="mx-auto max-w-6xl px-4 h-16 flex items-center justify-between">
         <a href="/" class="flex items-center gap-3">
           <img src="/logoAsso.jpg" alt="IDF Académie" class="h-10 w-10 object-contain" />
-          <span class="font-semibold tracking-wide">IDF Académie</span>
+          <span class="font-semibold tracking-wide">{SITE.name}</span>
         </a>
 
         <!-- Desktop nav -->
@@ -50,6 +117,18 @@ const { title = "IDF Académie", description = "Club & Académie – Le Blanc‑
     </header>
 
     <main class="mx-auto max-w-6xl px-4 py-10">
+        <!-- Hero -->
+        <h1 class="text-3xl md:text-5xl font-extrabold">
+          {SITE.name} <span class="text-gold">Football Club</span>
+        </h1>
+        <p class="mt-4 text-neutral-300">
+          {SITE.tagline} <br>
+          {SITE.motto}
+        </p>
+      <div class="mt-6 flex gap-3">
+        <a href="/contact" class="btn">Contactez-nous</a>
+        <a href="/a-propos" class="chip">En savoir plus</a>
+      </div>
       <slot />
     </main>
 
@@ -58,28 +137,30 @@ const { title = "IDF Académie", description = "Club & Académie – Le Blanc‑
         <div>
           <div class="flex items-center gap-3">
             <img src="/logoAsso.jpg" alt="Logo IDF Académie" class="h-10 w-10" />
-            <p class="font-semibold">IDF Académie – Football Club</p>
+            <p class="font-semibold">{SITE.name} – Football Club</p>
           </div>
           <p class="mt-2 text-sm text-neutral-300">
-            Le Blanc‑Mesnil • Maison des Arts martiaux
+            {LOCATION.city} , {LOCATION.mainVenue}
           </p>
         </div>
         <div>
           <p class="font-medium mb-2">Contacts</p>
-          <p class="text-sm text-neutral-300">Email : contact@idfacademie.fr</p>
-          <p class="text-sm text-neutral-300">Téléphone : 07 53 38 75 95</p>
+          <p class="text-sm text-neutral-300">Email : {CONTACT.email}</p>
+          <p class="text-sm text-neutral-300">Téléphone : {CONTACT.phone}</p>
         </div>
         <div>
           <p class="font-medium mb-2">Réseaux</p>
-          <div class="flex gap-3">
-            <a class="chip" href="#" target="_blank" rel="noopener">Instagram</a>
-            <a class="chip" href="#" target="_blank" rel="noopener">YouTube</a>
-            <a class="chip" href="#" target="_blank" rel="noopener">TikTok</a>
-          </div>
+        <div class="flex gap-3">
+          {SOCIAL.map((link) => (
+            <a class="chip" href={link.href} target="_blank" rel="noopener">
+              {link.label}
+            </a>
+          ))}
+        </div>
         </div>
       </div>
       <div class="border-t border-neutral-800 text-center text-xs text-neutral-400 py-4">
-        © {new Date().getFullYear()} IDF Académie. Tous droits réservés.
+        © {SITE.foundingYear} - {new Date().getFullYear()} {SITE.name}. Tous droits réservés.
       </div>
     </footer>
 

@@ -1,22 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import MiniMatchList from "../components/MiniMatchList.astro";
+import { SITE, CONTACT, LOCATION, ROUTES , SOCIAL, ASSETS } from "../config";
 ---
 
-<Layout title="IDF Académie – Accueil">
+<Layout title={`${SITE.name} – Accueil`}>
 
-  <!-- Hero -->
-  <h1 class="text-3xl md:text-5xl font-extrabold">
-    IDF Académie <span class="text-gold">Football Club</span>
-  </h1>
-  <p class="mt-4 text-neutral-300">
-    De l’effort naît l’excellence. <br>
-    Gagner, c’est se dépasser soi-même et transformer les rêves en réalité.
-  </p>
-<div class="mt-6 flex gap-3">
-  <a href="/contact" class="btn">Contactez-nous</a>
-  <a href="/a-propos" class="chip">En savoir plus</a>
-</div>
  
   <!-- Section "À venir" -->
   <section class="mt-12">
@@ -32,7 +21,7 @@ import MiniMatchList from "../components/MiniMatchList.astro";
 <section class="mt-12">
   <h2 class="text-2xl font-bold mb-3">Qui sommes-nous ?</h2>
   <p class="text-neutral-300">
-    IDF Académie est une association sportive en Île-de-France, spécialisée dans la formation
+    {SITE.name}est une association sportive en Île-de-France, spécialisée dans la formation
     des jeunes footballeurs 6–12 ans. Nous proposons un projet éducatif et sportif structuré,
     fondé sur des valeurs fortes.
   </p>
@@ -112,7 +101,7 @@ import MiniMatchList from "../components/MiniMatchList.astro";
   </h2>
   <div class="rounded-2xl border border-neutral-800 p-6 bg-neutral-900/30">
     <p class="text-neutral-300 mb-2">
-      📍 <span class="font-semibold">Maison des Arts Martiaux – Le Blanc-Mesnil</span>
+      📍 <span class="font-semibold">{LOCATION.mainVenue} – {LOCATION.city}</span>
     </p>
     <p class="text-neutral-400 text-sm">
       D’autres sites partenaires selon les événements.
