@@ -3,14 +3,15 @@ export const SITE = {
   url: "https://idf-academie.fr",
   description:
     "IDF Académie forme les jeunes footballeurs (6–12 ans) en Île-de-France avec un projet éducatif structuré, fondé sur le respect, le travail, le dépassement et la solidarité.",
-  foundingYear: 2022,
+  foundingYear: 2024,
   tagline: "De l’effort naît l’excellence.",
   motto: "Gagner, c’est se dépasser soi-même et transformer les rêves en réalité.",
+  age : "6 à 13"
 };
 
 export const CONTACT = {
   email: "contact@idf-academie.fr",
-  phone: "+33 6 12 34 56 78",
+  phone: "06 12 34 56 78",
 };
 
 export const LOCATION = {
@@ -20,15 +21,16 @@ export const LOCATION = {
 
 export const ROUTES = {
   contact: "/contact",
-  about: "/a-propos",
+  about: "/about",
   planning: "/planning",
+  galerie: "/galerie",
 };
 
 
 export const SOCIAL = [
   { label: "Instagram", href: "https://instagram.com/idfacademie" },
-  { label: "TikTok", href: "https://tiktok.com/@idfacademie" },
-  { label: "YouTube", href: "https://youtube.com/@idfacademie" },
+  { label: "TikTok", href: "https://tiktok.com/@idf.academie" },
+  { label: "Snapchat", href: "https://www.snapchat.com/add/idfacademie" },
 ];
 
 export const ASSETS = {

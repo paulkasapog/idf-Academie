@@ -5,7 +5,18 @@ import { SITE, CONTACT, LOCATION, ROUTES , SOCIAL, ASSETS } from "../config";
 ---
 
 <Layout title={`${SITE.name} – Accueil`}>
-
+    <!-- Hero -->
+    <h1 class="text-3xl md:text-5xl font-extrabold">
+      {SITE.name} <span class="text-gold">Football Club</span>
+    </h1>
+    <p class="mt-4 text-neutral-300">
+      {SITE.tagline} <br>
+      {SITE.motto}
+    </p>
+  <div class="mt-6 flex gap-3">
+    <a href={ROUTES.contact} class="btn">Contactez-nous</a>
+    <a href={ROUTES.about} class="chip">En savoir plus</a>
+  </div>
  
   <!-- Section "À venir" -->
   <section class="mt-12">

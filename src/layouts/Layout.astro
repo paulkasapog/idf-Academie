@@ -91,10 +91,10 @@ const logoUrl  = toAbs(ASSETS.logo.src);
         <!-- Desktop nav -->
         <nav class="hidden md:flex items-center gap-6 text-sm">
           <a class="nav" href="/">Accueil</a>
-          <a class="nav" href="/a-propos">À propos</a>
-          <a class="nav" href="/planning">Planning</a>
-          <a class="nav" href="/galerie">Galerie</a>
-          <a class="btn" href="/contact">Contact</a>
+          <a class="nav" href={ROUTES.about}>À propos</a>
+          <a class="nav" href={ROUTES.planning}>Planning</a>
+          <a class="nav" href={ROUTES.galerie}>Galerie</a>
+          <a class="btn" href={ROUTES.contact}>Contact</a>
         </nav>
 
         <!-- Mobile burger -->
@@ -117,18 +117,6 @@ const logoUrl  = toAbs(ASSETS.logo.src);
     </header>
 
     <main class="mx-auto max-w-6xl px-4 py-10">
-        <!-- Hero -->
-        <h1 class="text-3xl md:text-5xl font-extrabold">
-          {SITE.name} <span class="text-gold">Football Club</span>
-        </h1>
-        <p class="mt-4 text-neutral-300">
-          {SITE.tagline} <br>
-          {SITE.motto}
-        </p>
-      <div class="mt-6 flex gap-3">
-        <a href="/contact" class="btn">Contactez-nous</a>
-        <a href="/a-propos" class="chip">En savoir plus</a>
-      </div>
       <slot />
     </main>
 

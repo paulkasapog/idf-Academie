@@ -1,0 +1,131 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { SITE, CONTACT, LOCATION, ROUTES , SOCIAL, ASSETS } from "../config";
+const group_Photo ="/public/teamgroup.jpg";
+---
+<Layout title={`${SITE.name} – A-Propos`}>
+
+<!-- Intro -->
+  <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight mb-4">
+    À propos de {SITE.name}
+  </h1>
+
+   <p class="text-neutral-300 leading-relaxed">
+    Fondée en {SITE.foundingYear}, <span class="font-semibold">{SITE.name}</span> est née
+    d’une passion simple : offrir aux jeunes de {SITE.age} ans un cadre d’apprentissage
+    <span class="text-gold font-semibold">exigeant et bienveillant</span>, où l’effort,
+    le respect et la solidarité préparent autant à la vie qu’au jeu.
+    Basée au <span class="font-semibold">{LOCATION.mainVenue}</span> — {LOCATION.city}, 
+    l’Académie accompagne chaque enfant avec un suivi régulier et des objectifs clairs.
+  </p>
+
+</section>
+
+<!-- Notre Histoire -->
+<section class="mt-12" aria-labelledby="history">
+  <h2 id="history" class="text-2xl font-bold mb-3">Notre histoire</h2>
+
+  <p class="text-neutral-300 leading-relaxed mb-3">
+    {SITE.name} est une association récente, fondée en 2024 au
+    <span class="font-semibold">{LOCATION.mainVenue}</span> — {LOCATION.city}.
+  </p>
+
+  <p class="text-neutral-300 leading-relaxed mb-4">
+    Elle est née d’une passion commune pour le football et d’un objectif clair :
+    <span class="text-gold font-semibold">offrir aux jeunes de {SITE.age} ans un cadre éducatif et sportif structuré</span>.
+  </p>
+
+  <ul class="list-disc list-inside space-y-2 text-neutral-300">
+    <li>Créer un environnement <span class="font-semibold">bienveillant</span> et motivant</li>
+    <li>Développer la <span class="font-semibold">discipline</span> et le respect</li>
+    <li>Poser des bases solides pour un projet qui <span class="font-semibold">grandira chaque année</span></li>
+  </ul>
+
+  <blockquote class="border-l-4 border-gold pl-4 italic text-neutral-400 mt-6">
+    “Chaque grand projet commence petit. L’important, c’est la vision et l’énergie qu’on y met.”
+  </blockquote>
+</section>
+
+    <!-- Notre Equipe -->
+<section class="mt-12" aria-labelledby="team">
+  <h2 id="team" class="text-2xl font-bold mb-3">Notre équipe</h2>
+
+  <p class="text-neutral-300 leading-relaxed mb-4">
+    Derrière <span class="font-semibold">{SITE.name}</span>, il y a avant tout une équipe
+    de passionnés. Éducateurs, bénévoles, joueurs et familles construisent
+    ensemble un projet sportif et humain au cœur de {LOCATION.city}.
+  </p>
+
+  <figure class="rounded-2xl overflow-hidden border border-neutral-800 bg-neutral-900/30">
+    <img
+      src={group_Photo}
+      alt="Photo de groupe — staff et joueurs d’IDF Académie"
+      loading="lazy"
+      class="w-full h-auto object-cover"
+      width="1600" height="900"
+    />
+    <figcaption class="text-neutral-400 text-sm p-3">
+      Le staff et les joueurs de l’académie — {new Date().getFullYear()}
+    </figcaption>
+  </figure>
+</section>
+
+<!-- Nos Valeurs -->
+<section class="mt-12" aria-labelledby="values">
+  <h2 id="values" class="text-2xl font-bold mb-4">Nos valeurs</h2>
+
+  <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
+    <article class="rounded-2xl border border-neutral-800 p-5 bg-neutral-900/30">
+      <h3 class="font-semibold mb-2 text-gold">Respect</h3>
+      <p class="text-neutral-300 text-sm">
+        Sur le terrain comme en dehors, chaque joueur apprend à valoriser ses coéquipiers, ses adversaires et l’arbitre.
+      </p>
+    </article>
+
+    <article class="rounded-2xl border border-neutral-800 p-5 bg-neutral-900/30">
+      <h3 class="font-semibold mb-2 text-gold">Travail</h3>
+      <p class="text-neutral-300 text-sm">
+        La régularité et l’effort priment sur le talent. Chaque séance est une occasion de progresser pas à pas.
+      </p>
+    </article>
+
+    <article class="rounded-2xl border border-neutral-800 p-5 bg-neutral-900/30">
+      <h3 class="font-semibold mb-2 text-gold">Solidarité</h3>
+      <p class="text-neutral-300 text-sm">
+        Ensemble on va plus loin : entraide, esprit d’équipe et plaisir de jouer collectivement.
+      </p>
+    </article>
+
+    <article class="rounded-2xl border border-neutral-800 p-5 bg-neutral-900/30">
+      <h3 class="font-semibold mb-2 text-gold">Dépassement</h3>
+      <p class="text-neutral-300 text-sm">
+        Apprendre à se dépasser, à relever des défis et à sortir grandi de chaque effort fourni.
+      </p>
+    </article>
+  </div>
+</section>
+
+<!-- Vision Future -->
+<section class="mt-12" aria-labelledby="vision">
+  <h2 id="vision" class="text-2xl font-bold mb-4">Notre vision</h2>
+
+  <p class="text-neutral-300 leading-relaxed mb-4">
+    À {SITE.name}, nous voyons le football comme un <span class="text-gold font-semibold">levier d’éducation et de développement personnel</span>.  
+    Notre objectif est de bâtir un projet durable qui accompagne chaque enfant dans sa progression, sur le terrain comme dans la vie.
+  </p>
+
+  <ul class="list-disc list-inside space-y-2 text-neutral-300">
+    <li>Former des joueurs techniquement et humainement complets</li>
+    <li>Renforcer les partenariats locaux et régionaux</li>
+    <li>Créer un environnement où chaque enfant trouve sa place</li>
+    <li>Organiser des <span class="font-semibold">tournois</span> et des <span class="font-semibold">voyages sportifs</span> pour élargir les horizons</li>
+    <li>Devenir une référence éducative et sportive en Île-de-France</li>
+  </ul>
+
+  <p class="text-neutral-300 leading-relaxed mt-4">
+    Notre ambition est simple : <span class="text-gold font-semibold">transmettre bien plus qu’un sport</span>,
+    en donnant aux jeunes les outils pour réussir sur le terrain et au-delà.
+  </p>
+</section>
+
+
