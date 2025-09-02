@@ -4,20 +4,12 @@ import MiniMatchList from "../components/MiniMatchList.astro";
 ---
 
 <Layout title="IDF Académie – Planning">
-  <!-- Hero -->
-  <section class="mb-8">
-    <h1 class="text-3xl md:text-5xl font-extrabold">
-      IDF Académie <span class="text-gold">Football Club</span>
-    </h1>
-    <p class="mt-4 text-neutral-300">
-      De l’effort naît l’excellence. <br />
-      Gagner, c’est se dépasser soi-même et transformer les rêves en réalité.
-    </p>
-  </section>
+<section>
+  <h1 class="text-2xl font-bold mb-2">Tous nos matchs à venir</h1>
+  <p class="text-sm text-neutral-400 mb-6">
+    Le planning est mis à jour chaque semaine selon les informations fournies par les éducateurs.
+    Revenez régulièrement pour voir les prochains matchs et entraînements.
+  </p>
 
-  <!-- Liste des matchs -->
-  <section>
-    <h2 class="text-2xl font-bold mb-6">Tous nos matchs à venir</h2>
-    <MiniMatchList />
-  </section>
-</Layout>
+  <MiniMatchList />
+</section>
