@@ -1,24 +1,10 @@
 [
   {
-    "date": "2026-01-01",
-    "heure": "18:30",
-    "adversaire": "FC Montreuil",
-    "lieu": "Maison des arts martiaux",
-    "categorie": "U17"
-  },
-  {
-    "date": "2026-01-30",
-    "heure": "22:00",
-    "adversaire": "US Aulnay",
-    "lieu": "Stade X – Le Blanc-Mesnil",
-    "categorie": "Seniors"
-  },
-    {
-    "date": "2026-01-30",
-    "heure": "21:00",
-    "adversaire": "US Aulnay",
-    "lieu": "Stade X – Le Blanc-Mesnil",
-    "categorie": "Seniors"
+    "date": "Date",
+    "heure": "Heure",
+    "adversaire": "Entrainement ou adversaire",
+    "lieu": "Lieu",
+    "categorie": "categorie"
   }
 
 ]
