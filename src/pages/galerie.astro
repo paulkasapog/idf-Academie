@@ -1,0 +1,63 @@
+---
+import Layout from "../layouts/Layout.astro";
+import MiniMatchList from "../components/MiniMatchList.astro";
+import { SITE, CONTACT, LOCATION, ROUTES , SOCIAL, ASSETS } from "../data/config";
+---
+
+<Layout title={`${SITE.name} – Galerie`}>
+
+<section class="mx-auto max-w-5xl px-4 py-10 text-center">
+    <h1 class="text-3xl md:text-4xl font-semibold tracking-tight">
+      L’Académie en images
+    </h1>
+    <p class="mt-2 text-neutral-300">
+      Découvrez nos premiers visuels institutionnels. La galerie s’étoffera bientôt
+      avec les photos des entraînements, matchs et événements.
+    </p>
+  </section>
+ <!-- Grille style 'Insta' avec légendes -->
+  <section class="mx-auto max-w-6xl px-4 pb-16">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      <figure class="rounded-xl overflow-hidden bg-neutral-900/50 border border-neutral-800 p-2">
+        <img
+          src="/ImageInstitutionnelles/logoAsso.jpg"
+          alt="Logo officiel IDF Académie"
+          loading="lazy"
+          class="w-full h-64 object-cover rounded-lg"
+        />
+        <figcaption class="mt-2 text-sm text-neutral-300 text-center">
+          Logo officiel de l’IDF Académie
+        </figcaption>
+      </figure>
+
+      <figure class="rounded-xl overflow-hidden bg-neutral-900/50 border border-neutral-800 p-2">
+        <img
+          src="/ImageInstitutionnelles/maillot1.jpg"
+          alt="Maillot domicile IDF Académie"
+          loading="lazy"
+          class="w-full h-64 object-cover rounded-lg"
+        />
+        <figcaption class="mt-2 text-sm text-neutral-300 text-center">
+          Maillot domicile (2025)
+        </figcaption>
+      </figure>
+
+      <figure class="rounded-xl overflow-hidden bg-neutral-900/50 border border-neutral-800 p-2">
+        <img
+          src="/ImageInstitutionnelles/maillot2et3.jpg"
+          alt="Maillot extérieur IDF Académie"
+          loading="lazy"
+          class="w-full h-64 object-cover rounded-lg"
+        />
+        <figcaption class="mt-2 text-sm text-neutral-300 text-center">
+          Maillot extérieur (2025)
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+</Layout>
+
+
+</Layout>
+
+

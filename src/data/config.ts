@@ -36,7 +36,7 @@ export const SOCIAL = [
 export const ASSETS = {
   logo: {
     alt: "Logo IDF Académie",
-    src: "/logoAsso.jpg", 
+    src: "/ImageInstitutionnelles/logoAsso.jpg", 
     width: 500,            
     height: 500,           
   },
