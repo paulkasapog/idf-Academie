@@ -1,0 +1,51 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { SITE, CONTACT, LOCATION, ROUTES , SOCIAL, ASSETS } from "../data/config";
+---
+
+<Layout title={`${SITE.name} – Contact`}>
+<section class="mx-auto max-w-4xl px-6 py-16 text-center">
+  <h1 class="text-3xl md:text-4xl font-semibold tracking-tight mb-6">
+    Nous contacter
+  </h1>
+  <p class="text-neutral-300 mb-10">
+    Une question, une inscription ou une info ? L’équipe IDF Académie est à votre écoute.
+  </p>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+    <div class="flex flex-col items-center bg-neutral-900/50 border border-neutral-800 rounded-xl p-6">
+      <span class="text-2xl mb-2">📍</span>
+      <h2 class="font-medium text-lg">Adresse</h2>
+      <p class="text-neutral-400 text-sm">
+        Maison des Arts Martiaux<br />
+        Le Blanc-Mesnil
+      </p>
+    </div>
+
+    <div class="flex flex-col items-center bg-neutral-900/50 border border-neutral-800 rounded-xl p-6">
+      <span class="text-2xl mb-2">📞</span>
+      <h2 class="font-medium text-lg">Téléphone</h2>
+      <p class="text-neutral-400 text-sm">
+        06 12 34 56 78
+      </p>
+    </div>
+
+    <div class="flex flex-col items-center bg-neutral-900/50 border border-neutral-800 rounded-xl p-6">
+      <span class="text-2xl mb-2">📧</span>
+      <h2 class="font-medium text-lg">Email</h2>
+      <p class="text-neutral-400 text-sm">
+        contact@idf-academie.fr
+      </p>
+    </div>
+  </div>
+<a
+  href="https://docs.google.com/forms/d/e/1FAIpQLSedUoRfQDgJMLMaoB1EjOEbvteJPSkOHtRyAu4GYj6GzbawvQ/viewform"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="inline-block bg-gold text-black px-6 py-3 rounded-xl font-medium hover:bg-yellow-400 transition"
+>
+  ✍️ Remplir le formulaire
+</a>
+
+</section>
+</Layout>
